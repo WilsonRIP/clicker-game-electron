@@ -17,10 +17,6 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "allowSyntheticDefaultImports": true,
-    "jsx": "react-jsx",
     "sourceMap": true,
     "outDir": "dist",
     "baseUrl": ".",
@@ -28,5 +24,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["src/**/*"]
+  "include": ["src/main.ts", "src/preload.ts"],
+  "exclude": ["src/renderer.tsx", "src/components/**/*", "src/lib/**/*"]
 }
