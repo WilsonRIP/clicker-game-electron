@@ -1,81 +1,52 @@
 {
   "name": "clicker-game-electron",
-  "version": "1.0.0",
-  "description": "A clicker game built with Electron, TypeScript, and ShadCn UI",
-  "main": "dist/main.js",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "start": "electron .",
-    "dev": "concurrently \"npm run build:main:watch\" \"npm run build:renderer:watch\" \"npm run dev:electron\"",
-    "dev:electron": "wait-on dist/main.js dist/renderer.js && cross-env NODE_ENV=development electron .",
-    "build": "npm run build:main && npm run build:renderer",
-    "build:main": "tsc -p tsconfig.main.json",
-    "build:main:watch": "tsc -p tsconfig.main.json -w",
-    "build:renderer": "webpack --config webpack.config.js",
-    "build:renderer:watch": "webpack --config webpack.config.js --watch",
-    "lint": "eslint -c .eslintrc --ext .ts ./src",
-    "package": "npm run build && electron-builder build --win --publish never"
-  },
-  "keywords": [
-    "electron",
-    "clicker",
-    "game",
-    "typescript",
-    "shadcn"
-  ],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "devDependencies": {
-    "@types/node": "^20.10.5",
-    "@types/react": "^18.2.45",
-    "@types/react-dom": "^18.2.18",
-    "autoprefixer": "^10.4.16",
-    "concurrently": "^8.2.2",
-    "cross-env": "^7.0.3",
-    "css-loader": "^7.1.2",
-    "electron": "^28.0.0",
-    "electron-builder": "^24.9.1",
-    "eslint": "^8.56.0",
-    "html-webpack-plugin": "^5.6.3",
-    "postcss": "^8.4.32",
-    "postcss-loader": "^8.1.1",
-    "style-loader": "^4.0.0",
-    "tailwindcss": "^3.4.0",
-    "ts-loader": "^9.5.2",
-    "typescript": "^5.3.3",
-    "wait-on": "^7.2.0",
-    "webpack": "^5.99.5",
-    "webpack-cli": "^6.0.1"
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
-    "@radix-ui/react-alert-dialog": "^1.0.5",
-    "@radix-ui/react-dialog": "^1.0.5",
-    "@radix-ui/react-slot": "^1.0.2",
-    "class-variance-authority": "^0.7.0",
-    "clsx": "^2.0.0",
-    "electron-squirrel-startup": "^1.0.1",
-    "gsap": "^3.12.7",
-    "lucide-react": "^0.300.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "tailwind-merge": "^2.1.0",
-    "tailwindcss-animate": "^1.0.7"
+    "@hookform/resolvers": "^5.0.1",
+    "@icons-pack/react-simple-icons": "^12.6.0",
+    "@radix-ui/react-checkbox": "^1.1.5",
+    "@radix-ui/react-dialog": "^1.1.7",
+    "@radix-ui/react-label": "^2.1.3",
+    "@radix-ui/react-progress": "^1.1.3",
+    "@radix-ui/react-select": "^2.1.7",
+    "@radix-ui/react-slot": "^1.2.0",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "framer-motion": "^12.7.3",
+    "lucide-react": "^0.488.0",
+    "next": "^15.3.0",
+    "next-themes": "^0.4.6",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-hook-form": "^7.55.0",
+    "react-icons": "^5.5.0",
+    "sonner": "^2.0.3",
+    "tailwind-merge": "^3.2.0",
+    "tw-animate-css": "^1.2.5",
+    "zod": "^3.24.2"
   },
-  "build": {
-    "appId": "com.clicker.game",
-    "productName": "Clicker Game",
-    "directories": {
-      "output": "release/"
-    },
-    "files": [
-      "dist/**/*",
-      "node_modules/**/*",
-      "package.json"
-    ],
-    "win": {
-      "target": [
-        "nsis"
-      ]
-    }
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@radix-ui/react-tabs": "^1.1.4",
+    "@radix-ui/react-tooltip": "^1.2.0",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "autoprefixer": "^10.4.17",
+    "eslint": "^9",
+    "eslint-config-next": "15.3.0",
+    "postcss": "^8.4.35",
+    "prettier": "^3.5.3",
+    "prettier-plugin-tailwindcss": "^0.6.11",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
   }
 }
